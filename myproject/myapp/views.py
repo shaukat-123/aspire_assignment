@@ -1,18 +1,9 @@
-from rest_framework import viewsets, status
 from rest_framework.permissions import IsAdminUser
-from rest_framework.response import Response
-from rest_framework.decorators import action
 from rest_framework.views import APIView
-
-from .models import Item
-from .serializers import ItemSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
-
-# myapp/views.py
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.decorators import action
 from .models import Item
 from .serializers import ItemSerializer
 
