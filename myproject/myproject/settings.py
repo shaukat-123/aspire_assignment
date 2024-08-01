@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+import os
 from datetime import timedelta
 from pathlib import Path
 
@@ -106,17 +107,28 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # },
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'aspire',
-        'PASSWORD': 'aspire@123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+    'ENGINE': os.getenv("DB_ENGINE", 'django.db.backends.mysql'),
+    'NAME': os.getenv("DB_NAME", 'aspiredb'),
+    'USER': os.getenv("DB_USER", 'admin'),
+    'PASSWORD': os.getenv("DB_PASSWORD", "Aspire123"),
+    'HOST': os.getenv("DB_HOST", 'aspire.cy9fzovpeozt.ap-south-1.rds.amazonaws.com'),
+    'PORT': int(os.getenv("DB_PORT", '3306')),
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'mydatabase',
+    #     'USER': 'admin',
+    #     'PASSWORD': 'Aspire123',
+    #     'HOST': 'aspire.cy9fzovpeozt.ap-south-1.rds.amazonaws.com',
+    #     'PORT': '3306',
+    # }
 
 }
 
-
+# host: aspire.cy9fzovpeozt.ap-south-1.rds.amazonaws.com
+# 10:27
+# username: admin
+# Password: Aspire123
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
