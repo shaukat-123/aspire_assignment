@@ -111,17 +111,9 @@ DATABASES = {
     'NAME': os.getenv("DB_NAME", 'aspiredb'),
     'USER': os.getenv("DB_USER", 'admin'),
     'PASSWORD': os.getenv("DB_PASSWORD", "Aspire123"),
-    'HOST': os.getenv("DB_HOST", 'aspire.cy9fzovpeozt.ap-south-1.rds.amazonaws.com'),
+    'HOST': os.getenv("DB_HOST", 'localhost'),
     'PORT': int(os.getenv("DB_PORT", '3306')),
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'mydatabase',
-    #     'USER': 'admin',
-    #     'PASSWORD': 'Aspire123',
-    #     'HOST': 'aspire.cy9fzovpeozt.ap-south-1.rds.amazonaws.com',
-    #     'PORT': '3306',
-    # }
 
 }
 
